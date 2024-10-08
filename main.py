@@ -4,17 +4,17 @@ def main():
         open_book = f.read()
         f.close()
 
-        # print_book_to_console(book)
         word_count = count_words(open_book)
-        letter_count = count_letters(open_book)
 
-        sorted_letter_list = dict_to_sorted_dict(letter_count)
+        letter_count = count_letters(open_book)
+        
+        sorted_letter_count = dict_to_sorted_dict(letter_count)
 
         print(f"--- Begin report of {book_source} ---")
         print(f"{word_count} words found in the document.")
         print("")
-        for letter in sorted_letter_list:
-            print(f"The letter {letter} was found {sorted_letter_list[letter]} times.")
+        for letter in sorted_letter_count:
+            print(f"The letter {letter} was found {sorted_letter_count[letter]} times.")
         print("--- End report ---")
 
 def print_book_to_console(book):
